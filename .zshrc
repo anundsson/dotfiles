@@ -74,9 +74,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autojump)
 source $ZSH/oh-my-zsh.sh
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
