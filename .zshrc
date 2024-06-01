@@ -11,6 +11,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Path to your kubeconfig
+export KUBECONFIG="$HOME/.kube/config"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -82,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,9 +111,16 @@ source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 
 # Aliases
 
-alias cat="bat"
-alias k="kubecolor"
-alias kubectl="kubecolor"
+# bat
+command -v bat >/dev/null 2>&1 && alias cat="bat"
+
+# kubecolor
+if command -v kubecolor >/dev/null 2>&1; then
+    alias k="kubecolor"
+else
+    alias k="kubectl"
+fi
+command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
 # alias pip="pip3"
 # alias python="python3.12"
 
@@ -118,3 +129,6 @@ alias kubectl="kubecolor"
 
 # thefuck
 eval $(thefuck --alias)
+
+# asdf
+. "$HOME/.asdf/asdf.sh"
