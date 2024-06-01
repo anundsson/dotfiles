@@ -1,14 +1,26 @@
 [includeif "gitdir:~/repos/work/"]
-	path = ~/src/work/.gitconfig
+	path = ~/src/work/.gitconfig_work
 	
 [includeif "gitdir:~/repos/personal/"]
-	path = ~/src/personal/.gitconfig
+	path = ~/src/personal/.gitconfig_personal
 
-[user]
-	name = André Anundsson
-	email = andre@anundsson.net
-[core]
-	sshCommand = ssh -i ~/.ssh/home_ed25519
+#[user]
+#	name = André Anundsson
+#	email = andre@anundsson.net
+#[core]
+#	sshCommand = ssh -i ~/.ssh/home_ed25519
 
 [push]
 	autoSetupRemote = true
+[maintenance]
+	auto = false
+	strategy = incremental
+	repo = /Users/andre/repos/personal/ansible
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[alias]
+	staash = stash --all
