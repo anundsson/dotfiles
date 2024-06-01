@@ -110,9 +110,6 @@ source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 alias cat="bat"
 alias k="kubecolor"
 alias kubectl="kubecolor"
-# Also works for OpenShift CLI
-export KUBECTL_COMMAND="oc"
-alias oc="kubecolor"
 # alias pip="pip3"
 # alias python="python3.12"
 
