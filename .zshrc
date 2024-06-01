@@ -107,9 +107,16 @@ source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 
 # Aliases
 
-alias cat="bat"
-alias k="kubecolor"
-alias kubectl="kubecolor"
+# bat
+command -v bat >/dev/null 2>&1 && alias cat="bat"
+
+# kubecolor
+if command -v kubecolor >/dev/null 2>&1; then
+    alias k="kubecolor"
+else
+    alias k="kubectl"
+fi
+command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
 # alias pip="pip3"
 # alias python="python3.12"
 
