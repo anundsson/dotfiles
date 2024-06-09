@@ -4,9 +4,9 @@
 [includeif "gitdir:~/repos/personal/"]
 	path = ~/src/personal/.gitconfig_personal
 
-#[user]
-#	name = André Anundsson
-#	email = andre@anundsson.net
+[user]
+	name = André Anundsson
+	email = andre@anundsson.net
 #[core]
 #	sshCommand = ssh -i ~/.ssh/home_ed25519
 
