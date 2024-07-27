@@ -82,6 +82,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -135,3 +137,12 @@ eval $(thefuck --alias)
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# zsh
+alias ld="eza -lD" # lists only directories (no files)
+alias lf="eza -lf --color=always | grep -v /" # lists only files (no directories)
+alias lh="eza -dl .* --group-directories-first" # lists only hidden files (no directories)
+alias ll="eza -al --group-directories-first" # lists everything with directories first
+alias ls="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
+alias lt="eza -al --sort=modified" # lists everything sorted by time updated

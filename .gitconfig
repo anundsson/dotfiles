@@ -5,11 +5,8 @@
 	path = ~/src/personal/.gitconfig_personal
 
 [user]
-	name = André Anundsson
-	email = andre@anundsson.net
-#[core]
-#	sshCommand = ssh -i ~/.ssh/home_ed25519
-
+    name = André Anundsson
+    email = andre@anundsson.net
 [push]
 	autoSetupRemote = true
 [maintenance]
@@ -24,3 +21,8 @@
 	sort = -committerdate
 [alias]
 	staash = stash --all
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
