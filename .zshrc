@@ -83,6 +83,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 
 # User configuration
 
