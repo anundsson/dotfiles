@@ -86,6 +86,8 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -127,8 +129,24 @@ command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv" # pyenv path
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # thefuck
 eval $(thefuck --alias)
 
-# asdf
-. "$HOME/.asdf/asdf.sh"
+# nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# zsh
+alias ld="eza -lD" # lists only directories (no files)
+alias lf="eza -lf --color=always | grep -v /" # lists only files (no directories)
+alias lh="eza -dl .* --group-directories-first" # lists only hidden files (no directories)
+alias ll="eza -al --group-directories-first" # lists everything with directories first
+alias ls="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
+alias lt="eza -al --sort=modified" # lists everything sorted by time updated
