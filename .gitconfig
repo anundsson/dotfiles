@@ -4,6 +4,9 @@
 [includeif "gitdir:~/repos/personal/"]
 	path = ~/src/personal/.gitconfig_personal
 
+[includeif "gitdir:~/dotfiles"]
+        path = ~/src/personal/.gitconfig_personal
+
 [user]
     name = André Anundsson
     email = andre@anundsson.net
