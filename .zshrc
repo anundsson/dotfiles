@@ -116,13 +116,6 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.z
 # bat
 command -v bat >/dev/null 2>&1 && alias cat="bat"
 
-# kubecolor
-if command -v kubecolor >/dev/null 2>&1; then
-    alias k="kubecolor"
-else
-    alias k="kubectl"
-fi
-command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
 # alias pip="pip3"
 # alias python="python3.12"
 
@@ -147,6 +140,39 @@ eval $(thefuck --alias)
 alias ld="eza -lD" # lists only directories (no files)
 alias lf="eza -lf --color=always | grep -v /" # lists only files (no directories)
 alias lh="eza -dl .* --group-directories-first" # lists only hidden files (no directories)
-alias ll="eza -al --group-directories-first" # lists everything with directories first
-alias ls="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
+alias ls="eza -al --group-directories-first" # lists everything with directories first
+alias ll="eza -alf --color=always --sort=size | grep -v /" # lists only files sorted by size
 alias lt="eza -al --sort=modified" # lists everything sorted by time updated
+
+# Kubernetes
+
+## kubecolor
+if command -v kubecolor >/dev/null 2>&1; then
+    alias k="kubecolor"
+else
+    alias k="kubectl"
+fi
+command -v kubecolor >/dev/null 2>&1 && alias kubectl="kubecolor"
+
+## Export variables for dry-run and immediate delete options
+export do="--dry-run=client"                  # Correct dry-run value
+export yaml="-oyaml"                         # Output format in YAML
+export now="--force --grace-period=0"         # Example usage: k delete pod x $now
+
+## Dry run aliases using the corrected exported variables
+alias kad="kubectl apply $do $yaml -f"        # Dry run apply from a file
+alias kcd="kubectl create $do $yaml -f"       # Dry run create from a file
+alias kag="kubectl apply $do $yaml -f"        # Generate YAML output without applying
+alias kdd="kubectl delete $do"                # Dry run delete
+
+## Additional useful kubectl aliases
+alias kga='kubectl get all'                   # Get all resources in the current namespace
+alias kg='kubectl get'                        # Shortcut for kubectl get
+alias kd='kubectl describe'                   # Shortcut for kubectl describe
+alias kdel='kubectl delete'                   # Shortcut for kubectl delete
+alias kex='kubectl exec -it'                  # Shortcut for kubectl exec with interactive mode
+alias kl='kubectl logs'                       # Shortcut for kubectl logs
+alias kgp='kubectl get pods'                  # Get all pods
+alias kgd='kubectl get deployments'           # Get all deployments
+alias kgsvc='kubectl get services'            # Get all services
+alias kns='kubectl config set-context --current --namespace' # Set namespace for current context
