@@ -1,5 +1,5 @@
 [includeif "gitdir:~/repos/work/"]
-	path = ~/repos/work/.gitconfig
+	path = ~/src/work/.gitconfig_work
 	
 [includeif "gitdir:~/repos/personal/"]
 	path = ~/src/personal/.gitconfig_personal
