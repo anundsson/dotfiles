@@ -15,7 +15,6 @@
 [maintenance]
 	auto = false
 	strategy = incremental
-	repo = /Users/andre/repos/personal/ansible
 [rerere]
 	enabled = true
 [column]

@@ -55,7 +55,3 @@ Feel free to fork this repository and customize the dotfiles to suit your prefer
 ## Contributing
 
 While this is a personal collection of dotfiles, contributions or suggestions are welcome. If you have improvements or suggestions, please open an issue or pull request.
-
-## License
-
-This repository is available under the [MIT License](LICENSE). Feel free to use, modify, and distribute as you see fit.
