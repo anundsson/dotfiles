@@ -1,0 +1,4 @@
+# Ignore SSH and RSA keys
+*.pem
+*.key
+*.pub
