@@ -1,4 +1,5 @@
-# Ignore SSH and RSA keys
+# Ignore SSH known_hosts and RSA keys
 *.pem
 *.key
 *.pub
+known_hosts
