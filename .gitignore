@@ -3,3 +3,5 @@
 *.key
 *.pub
 known_hosts
+home_ed25519
+work_ed25519
