@@ -175,3 +175,5 @@ alias kgp='kubectl get pods'                  # Get all pods
 alias kgd='kubectl get deployments'           # Get all deployments
 alias kgsvc='kubectl get services'            # Get all services
 alias kns='kubectl config set-context --current --namespace' # Set namespace for current context
+
+echo "Zsh configuration loaded successfully."

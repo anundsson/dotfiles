@@ -5,7 +5,8 @@
 	path = ~/src/personal/.gitconfig_personal
 
 [includeif "gitdir:~/dotfiles"]
-        path = ~/src/personal/.gitconfig_personal
+	path = ~/src/personal/.gitconfig_personal
+
 [init]
   defaultBranch = main
 
@@ -24,10 +25,10 @@
 	enabled = true
 
 [column]
-	ui = auto
+  ui = auto
 
 [branch]
-	sort = -committerdate
+  sort = -committerdate
 
 [alias]
 	staash = stash --all
