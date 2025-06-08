@@ -6,23 +6,32 @@
 
 [includeif "gitdir:~/dotfiles"]
         path = ~/src/personal/.gitconfig_personal
+[init]
+  defaultBranch = main
 
 [user]
     name = André Anundsson
     email = andre@anundsson.net
+
 [push]
 	autoSetupRemote = true
+
 [maintenance]
 	auto = false
 	strategy = incremental
+
 [rerere]
 	enabled = true
+
 [column]
 	ui = auto
+
 [branch]
 	sort = -committerdate
+
 [alias]
 	staash = stash --all
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
