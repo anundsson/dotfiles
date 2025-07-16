@@ -147,6 +147,4 @@ alias kgd='kubectl get deployments'           # Get all deployments
 alias kgsvc='kubectl get services'            # Get all services
 alias kns='kubectl config set-context --current --namespace' # Set namespace for current context
 
-
 source $ZSH/oh-my-zsh.sh
-echo "Zsh configuration loaded successfully."
