@@ -3,8 +3,8 @@
 # Set up environment - adjust these variables as needed
 HOME_EMAIL="andre@anundsson.net"
 WORK_EMAIL="andre.anundsson@xenit.se"
-HOME_KEY_NAME="home_ed25519"
-WORK_KEY_NAME="work_ed25519"
+HOME_KEY_NAME="home_rsa"
+WORK_KEY_NAME="work_rsa"
 
 # Ensure .ssh directory exists
 mkdir -p ~/.ssh
@@ -18,7 +18,7 @@ generate_key() {
         echo "SSH key at $key_path already exists. Skipping creation."
     else
         echo "Generating SSH key for $email..."
-        ssh-keygen -t ed25519 -b 4096 -f "$key_path" -C "$email" -N ""
+        ssh-keygen -t rsa -b 4096 -f "$key_path" -C "$email" -N ""
         echo "Adding SSH key at $key_path to SSH agent..."
         ssh-add "$key_path"
     fi

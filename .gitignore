@@ -5,6 +5,9 @@
 *.pem
 *.key
 *.pub
+home_*
+work_*
 known_hosts
-home_ed25519
-work_ed25519
+
+# Ignore .oh-my-zsh custom files
+/.oh-my-zsh/*
