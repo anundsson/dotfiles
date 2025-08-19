@@ -2,7 +2,7 @@
 
 # Set up environment - adjust these variables as needed
 HOME_EMAIL="andre@anundsson.net"
-WORK_EMAIL="andre.anundsson@xenit.se"
+WORK_EMAIL="andre@anundio.com"
 HOME_KEY_NAME="home_rsa"
 WORK_KEY_NAME="work_rsa"
 

@@ -1,6 +1,12 @@
 # Ignore lazy-lock.json in .config/nvim
 /.config/nvim/lazy-lock.json
 
+# Ignore environment variable files
+.env
+
+# Ignore nvim lua save files
+*.lua.save
+
 # Ignore SSH known_hosts and RSA keys
 *.pem
 *.key
