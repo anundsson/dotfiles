@@ -15,7 +15,8 @@
     email = andre@anundsson.net
 
 [push]
-	autoSetupRemote = true
+    default = current
+    autosetupremote = true
 
 [maintenance]
 	auto = false
