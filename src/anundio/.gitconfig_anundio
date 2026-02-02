@@ -1,6 +1,6 @@
 [user]
   email = "andre@anundio.com"
-  name = "Andre Anundsson (Anundio)"
+  name = "Andre Anundsson (anundio)"
 
-[url "git@github.com-Work"]
+[url "git@github.com-anundio"]
   insteadOf = "git@github.com"

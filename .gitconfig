@@ -1,12 +1,11 @@
-[includeif "gitdir:~/repos/work/"]
-	path = ~/src/work/.gitconfig_work
+[includeif "gitdir:~/repos/anundio/"]
+	path = ~/src/anundio/.gitconfig_anundio
 	
-[includeif "gitdir:~/repos/personal/"]
-	path = ~/src/personal/.gitconfig_personal
+[includeif "gitdir:~/repos/home/"]
+	path = ~/src/home/.gitconfig_home
 
 [includeif "gitdir:~/dotfiles"]
-	path = ~/src/personal/.gitconfig_personal
-
+	path = ~/src/home/.gitconfig_home
 [init]
   defaultBranch = main
 
