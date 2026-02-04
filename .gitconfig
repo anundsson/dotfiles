@@ -1,5 +1,8 @@
 [includeif "gitdir:~/repos/anundio/"]
 	path = ~/src/anundio/.gitconfig_anundio
+
+[includeif "gitdir:~/repos/work/customers/hm/"]
+	path = ~/src/hm/.gitconfig_hm
 	
 [includeif "gitdir:~/repos/home/"]
 	path = ~/src/home/.gitconfig_home
