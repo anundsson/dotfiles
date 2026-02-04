@@ -46,13 +46,12 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.z
 alias zshconfig="code ~/.zshrc"
 alias reload="source ~/.zshrc"
 alias upgrade='
-  omz update && \
-  if command -v brew >/dev/null 2>&1; then
-    brew update && brew upgrade
-  fi
-  if command -v apt >/dev/null 2>&1; then
-    sudo apt update && sudo apt upgrade -y
-  fi
+    omz update && \
+    if command -v brew >/dev/null 2>&1; then
+        brew update && brew upgrade
+    elif command -v apt >/dev/null 2>&1; then
+        sudo apt update && sudo apt upgrade -y
+    fi
 '
 
 # bat
@@ -64,14 +63,6 @@ fi
 
 # thefuck
 eval $(thefuck --alias)
-
-#docker CLI completion
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/andre/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-
 
 # zsh
 alias ld="eza -lD" # lists only directories (no files)
