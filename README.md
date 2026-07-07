@@ -74,25 +74,25 @@ brew install stow
 Here is a list of available configurations in this repository:
 
 - `zsh` - Z shell configuration
-- `src/.claude` - Claude Code config (agents, commands, settings) — git submodule
+- `.claude` - Claude Code config (agents, commands, settings) — git submodule
 
-## Claude Code Config (`src/claude`)
+## Claude Code Config (`.claude`)
 
-`src/.claude` is a git submodule pointing to [anundsson/.claude](https://github.com/anundsson/.claude). Stow links `~/.claude/{agents,commands,settings.json}`, `~/.claude-plugin/`, and `~/CLAUDE.md` from it.
+`.claude` is a git submodule at the repo root pointing to [anundsson/.claude](https://github.com/anundsson/.claude). Stow links `~/.claude/{agents,commands,settings.json}`, `~/.claude-plugin/`, and `~/CLAUDE.md` from it.
 
 ### Fresh machine setup
 
 ```bash
 git clone --recurse-submodules https://github.com/anundsson/dotfiles.git
 cd dotfiles
-stow --dir=src --target=$HOME .claude
+stow --dir=. --target=$HOME .claude
 ```
 
 If you already cloned without `--recurse-submodules`:
 
 ```bash
 git submodule update --init --recursive
-stow --dir=src --target=$HOME .claude
+stow --dir=. --target=$HOME .claude
 ```
 
 ### Updating Claude config
@@ -101,14 +101,14 @@ Changes to agents, commands, or settings live in the submodule. Two-step commit 
 
 ```bash
 # 1. Commit inside the submodule
-cd ~/dotfiles/src/.claude
+cd ~/dotfiles/.claude
 git add .
 git commit -m "your message"
 git push
 
 # 2. Bump the pinned SHA in dotfiles
 cd ~/dotfiles
-git add src/claude
+git add .claude
 git commit -m "chore: bump .claude submodule"
 git push
 ```
