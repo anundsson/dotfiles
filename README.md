@@ -74,48 +74,33 @@ brew install stow
 Here is a list of available configurations in this repository:
 
 - `zsh` - Z shell configuration
-- `.claude` - Claude Code config (agents, commands, settings) — git submodule
+- `.claude/` - Claude Code config (agents, commands, settings) — plain stow package
 
-## Claude Code Config (`.claude`)
+## Claude Code Config (`.claude/`)
 
-`.claude` is a git submodule at the repo root pointing to [anundsson/.claude](https://github.com/anundsson/.claude). Stow links `~/.claude/{agents,commands,settings.json}`, `~/.claude-plugin/`, and `~/CLAUDE.md` from it.
+`.claude/` is a plain directory in this repo. `stow -t ~ .` symlinks `~/.claude → ~/dotfiles/.claude` so Claude Code's default path works with no extra config.
+
+Machine-local state (sessions, history, tokens) is written into the same dir by Claude Code at runtime but excluded via `.claude/.gitignore`.
 
 ### Fresh machine setup
 
 ```bash
-git clone --recurse-submodules https://github.com/anundsson/dotfiles.git
-cd dotfiles
-stow --dir=. --target=$HOME .claude
-```
-
-If you already cloned without `--recurse-submodules`:
-
-```bash
-git submodule update --init --recursive
-stow --dir=. --target=$HOME .claude
-```
-
-### Updating Claude config
-
-Changes to agents, commands, or settings live in the submodule. Two-step commit process:
-
-```bash
-# 1. Commit inside the submodule
-cd ~/dotfiles/.claude
-git add .
-git commit -m "your message"
-git push
-
-# 2. Bump the pinned SHA in dotfiles
+git clone git@github.com:anundsson/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-git add .claude
-git commit -m "chore: bump .claude submodule"
-git push
+stow -t ~ .
+```
+
+If `~/.claude` already exists, back it up first:
+
+```bash
+mv ~/.claude ~/.claude.bak
+stow -t ~ .
+# restore machine-local dirs from backup if needed (plugins/, projects/, sessions/)
 ```
 
 ### Machine-local settings
 
-`statusLine` and other machine-specific Claude settings go in `~/.claude/settings.local.json` (gitignored — never committed).
+`statusLine` and machine-specific settings go in `~/.claude/settings.local.json` — gitignored, never committed.
 
 ## Customization
 
