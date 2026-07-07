@@ -121,4 +121,9 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# Hermes Agent
+if command -v hermes >/dev/null 2>&1; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 source $ZSH/oh-my-zsh.sh
