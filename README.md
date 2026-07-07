@@ -74,7 +74,48 @@ brew install stow
 Here is a list of available configurations in this repository:
 
 - `zsh` - Z shell configuration
-- *(List other configurations as they are added to the repository)*
+- `src/.claude` - Claude Code config (agents, commands, settings) — git submodule
+
+## Claude Code Config (`src/claude`)
+
+`src/.claude` is a git submodule pointing to [anundsson/.claude](https://github.com/anundsson/.claude). Stow links `~/.claude/{agents,commands,settings.json}`, `~/.claude-plugin/`, and `~/CLAUDE.md` from it.
+
+### Fresh machine setup
+
+```bash
+git clone --recurse-submodules https://github.com/anundsson/dotfiles.git
+cd dotfiles
+stow --dir=src --target=$HOME .claude
+```
+
+If you already cloned without `--recurse-submodules`:
+
+```bash
+git submodule update --init --recursive
+stow --dir=src --target=$HOME .claude
+```
+
+### Updating Claude config
+
+Changes to agents, commands, or settings live in the submodule. Two-step commit process:
+
+```bash
+# 1. Commit inside the submodule
+cd ~/dotfiles/src/.claude
+git add .
+git commit -m "your message"
+git push
+
+# 2. Bump the pinned SHA in dotfiles
+cd ~/dotfiles
+git add src/claude
+git commit -m "chore: bump .claude submodule"
+git push
+```
+
+### Machine-local settings
+
+`statusLine` and other machine-specific Claude settings go in `~/.claude/settings.local.json` (gitignored — never committed).
 
 ## Customization
 
